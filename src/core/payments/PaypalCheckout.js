@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import DropIn from 'braintree-web-drop-in-react';
-import { emptyTheCart, loadCartFromLocalStorage } from '../helper/cartHelper';
-import { Link } from 'react-router-dom';
+import { emptyTheCart } from '../helper/cartHelper';
+// import { Link } from 'react-router-dom';
 import { getMeToken, processMyPayment } from './helpers/paypalHelpers';
 import { createOrder } from '../helper/orderHelper';
 import { isAuthenticated } from '../../auth/helper';
@@ -38,7 +38,7 @@ const PaypalCheckout = ({
 
   useEffect(() => {
     getToken(userId, token);
-  }, []);
+  }, [userId, token]);
 
   const showDropIn = () => {
     return (
@@ -100,13 +100,13 @@ const PaypalCheckout = ({
         setInfo({ loading: false, success: false });
         console.log(err);
       });
+
+    return getNonce;
   };
 
   const getAmount = () => {
     let amount = 0;
-    products.map((p) => {
-      amount += p.price;
-    });
+    products.map((p) => (amount += p.price));
     return amount;
   };
 

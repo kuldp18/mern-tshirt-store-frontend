@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import Base from '../core/Base';
-import { Link, Redirect } from 'react-router-dom';
+import { Redirect } from 'react-router-dom';
 import { signin, isAuthenticated, authenticate } from '../auth/helper';
 
 const Signin = () => {

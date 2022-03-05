@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Link, Redirect } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { isAuthenticated } from '../auth/helper';
 import Base from '../core/Base';
 import { getAllCategories, createProduct } from './helper/adminapicall';
@@ -28,13 +28,13 @@ const AddProduct = () => {
     description,
     price,
     stock,
-    photo,
+    // photo,
     categories,
-    category,
-    loading,
+    // category,
+    // loading,
     error,
     createdProduct,
-    getRedirect,
+    // getRedirect,
     formData,
     size,
   } = values;
@@ -54,7 +54,7 @@ const AddProduct = () => {
 
   useEffect(() => {
     preload();
-  }, []);
+  }, [preload]);
 
   const handleChange = (name) => (e) => {
     const value = name === 'photo' ? e.target.files[0] : e.target.value;
