@@ -1,0 +1,23 @@
+.btn,
+.jumbotron,
+.nav :hover {
+  border-radius: 0px;
+}
+.jumbotron {
+  margin-bottom: 0;
+}
+
+body {
+  background: #343a40;
+  position: relative;
+}
+
+footer {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  left: 0;
+}
+.base-main-wrapper {
+  height: 100%;
+}
